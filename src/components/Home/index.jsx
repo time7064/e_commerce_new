@@ -81,7 +81,11 @@ const Home = () => {
                             return (
                             <Link 
                             key={id} 
-                            to={'/products/' + id} 
+
+                            /* vite.config.js 파일 base:"/e_commerce_new",  서버 배포 관련 추가 */
+                            // to={'/products/' + id} 
+                            to={'/e_commerce_new/products/' + id} 
+                            
                             className={styles.productItem}
                             >
                                 <img src={image} />

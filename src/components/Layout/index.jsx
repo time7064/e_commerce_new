@@ -5,7 +5,10 @@ import styles from './Layout.module.css';
 const Layout = () => {
     return (
         <div className={ styles.container} >
-            <Link to="/" className={ styles.link}>
+
+            {/* <Link to="/"  */}
+            <Link to="/e_commerce_new/" 
+                className={ styles.link}>
                 <h1>CSY_mall</h1>
             </Link>
 

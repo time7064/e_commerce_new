@@ -19,9 +19,13 @@ function App() {
         <Route element={ <Layout /> }  >          {/* #02 추가 - Layout 디자인 생성 */}
           {/* 아래 하위 Route 들이 index.jsx 파일의 <Outlet></Outlet> 로 들어감 */}
 
-          <Route path="/" element={ <Home /> }  />
+          {/* vite.config.js 파일 base:"/e_commerce_new",  서버 배포 관련 추가 */}
+          {/* <Route path="/" element={ <Home /> }  /> */}
+          <Route path="/e_commerce_new" element={ <Home /> }  />
           
-          <Route path="/products/:productId" element={ <ProductDetail /> }  />
+          {/* vite.config.js 파일 base:"/e_commerce_new",  서버 배포 관련 추가 */}
+          {/* <Route path="/products/:productId" element={ <ProductDetail /> }  /> */}
+          <Route path="/e_commerce_new/products/:productId" element={ <ProductDetail /> }  />
 
           {/* Route 는 위에서 아래로 path 를 찾음.. 없으면 * path 로 NotFound 호출 */}
           <Route path="*" element={ <NotFound /> }  />  
