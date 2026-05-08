@@ -4,6 +4,5 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  // base:"/e_commerce_new",
-  base:"/",
+  base:"/e_commerce_new",
 })
