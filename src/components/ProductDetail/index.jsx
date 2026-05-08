@@ -30,7 +30,11 @@ const ProductDetail = () => {
     const { reviews, isReviewsLoading, isReviewsError } = useFetchReviews(productId);
 
     // TODO : 2번 로딩..오류로 인해 추가.. 추후 확인 필요
-    if(product == null) return;
+    if(product == null) {
+        console.log("product == null ------------------------------");
+        return;
+    }
+    
     console.log("index - ", product);
     console.log("index category - ", product.category);
 
