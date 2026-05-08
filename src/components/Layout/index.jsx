@@ -6,7 +6,7 @@ const Layout = () => {
     return (
         <div className={ styles.container} >
             <Link to="/" className={ styles.link}>
-                <h1>멋사몰</h1>
+                <h1>CSY_mall</h1>
             </Link>
 
             {/*             
