@@ -1,0 +1,9 @@
+.container {
+    width: 700px;
+    margin: 0 auto;
+    text-decoration: none;
+}
+
+.link {
+    text-decoration: none;  /* Link <a> 태그(링크)의 밑줄을 삭제 */
+}
