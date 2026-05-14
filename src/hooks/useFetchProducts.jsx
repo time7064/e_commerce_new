@@ -27,8 +27,8 @@ function useFetchProducts() {
                 const URL = href + "products";
                 console.log("URL : ", URL);
 
-                var vURL = "http://localhost:3000/products";
-                // var vURL = "http://localhost:3000/serverGitHub/products";
+                var vURL = "http://localhost:3000/products";  // json 서버 기동시 사용..
+                // var vURL = "http://localhost:5173/e_commerce_new/db.json?products"; 
 
                 if(domain != "localhost") {
                     // vURL = "https://time7064.github.io/e_commerce_new/products"
@@ -38,7 +38,10 @@ function useFetchProducts() {
                     // vURL = "https://github.com/time7064/e_commerce_new/blob/main/server/db.json";
                     // vURL = "https://time7064.github.io/e_commerce_new/serverGitHub/products"
 
-                    vURL = "./serverGitHub/db.json";
+                    vURL = "https://time7064.github.io/e_commerce_new/db.json?products"
+
+
+                    // vURL = "./serverGitHub/db.json";
                 }
 
                 console.log("* vURL : ", vURL);
