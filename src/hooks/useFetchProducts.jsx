@@ -13,6 +13,7 @@ function useFetchProducts() {
                 setIsProductsLoading(true);
 
                 // TODO : 서버 배포 휴대폰 접속 문제 해결 ...............................................
+                /*
                 // 현재 도메인 가져오기 (예: example.com)
                 const domain = window.location.hostname;
                 // 포트 번호를 포함한 호스트 가져오기 (예: localhost:3000)
@@ -36,8 +37,11 @@ function useFetchProducts() {
                 }
 
                 console.log("* vURL : ", vURL);
-                // const response = await fetch("http://localhost:3000/products");
+                
                 const response = await fetch(vURL);
+                */
+
+                const response = await fetch("http://localhost:3000/products");
                 
                 // ......................................................................................
 
