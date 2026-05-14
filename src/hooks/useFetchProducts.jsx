@@ -28,20 +28,15 @@ function useFetchProducts() {
                 console.log("URL : ", URL);
 
                 var vURL = "http://localhost:3000/products";  // json 서버 기동시 사용..
-                // var vURL = "http://localhost:5173/e_commerce_new/db.json?products"; 
+                // var vURL = "http://localhost:5173/e_commerce_new/db.json";
+                
 
                 if(domain != "localhost") {
-                    // vURL = "https://time7064.github.io/e_commerce_new/products"
-                    // vURL = "https://time7064.github.io/products"
-                    // vURL = "http://localhost/products";
-                    // vURL = "http://localhost:3000/products";
-                    // vURL = "https://github.com/time7064/e_commerce_new/blob/main/server/db.json";
-                    // vURL = "https://time7064.github.io/e_commerce_new/serverGitHub/products"
-
-                    vURL = "https://time7064.github.io/e_commerce_new/db.json?products"
+                    // vURL = "https://time7064.github.io/e_commerce_new/db.json?products";
+                    vURL = "https://time7064.github.io/e_commerce_new/db.json";
 
 
-                    // vURL = "./serverGitHub/db.json";
+                    
                 }
 
                 console.log("* vURL : ", vURL);
@@ -53,8 +48,16 @@ function useFetchProducts() {
                 
                 // ......................................................................................
 
-                const json = await response.json();
+                // const json = await response.json();
+                var json = await response.json();
                 console.log(json);
+
+                if(domain != "localhost") {
+                    console.log("[json.products] ", json.products);
+
+                    json = json.products;
+                }
+                
 
                 if(!response.ok) {
                     throw new Error();
