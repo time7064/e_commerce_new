@@ -30,7 +30,8 @@ function useFetchProducts() {
 
                 if(domain != "localhost") {
                     // vURL = "https://time7064.github.io/e_commerce_new/products"
-                    vURL = "https://time7064.github.io/products"
+                    // vURL = "https://time7064.github.io/products"
+                    vURL = "http://localhost/products";
                 }
 
                 console.log("vURL : ", vURL);
