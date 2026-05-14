@@ -31,10 +31,11 @@ function useFetchProducts() {
                 if(domain != "localhost") {
                     // vURL = "https://time7064.github.io/e_commerce_new/products"
                     // vURL = "https://time7064.github.io/products"
-                    vURL = "http://localhost/products";
+                    // vURL = "http://localhost/products";
+                    vURL = "http://localhost:3000/products";
                 }
 
-                console.log("vURL : ", vURL);
+                console.log("* vURL : ", vURL);
                 // const response = await fetch("http://localhost:3000/products");
                 const response = await fetch(vURL);
                 
