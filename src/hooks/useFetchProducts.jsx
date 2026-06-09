@@ -39,18 +39,10 @@ function useFetchProducts() {
                     vURL = "https://time7064.github.io/e_commerce_new/db.json";
                     console.log("vURL : ", vURL);
 
-                    console.log("01 ------------------------");
-
                     response = await fetch(vURL);
-
                     json = await response.json();
 
-                    console.log("02 ------------------------");
-                    
                     json = json.products;
-
-                    console.log("03 ------------------------");
-
                     console.log("localhost X - [json.products] ", json);
                 }
                 else {
