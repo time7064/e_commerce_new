@@ -35,7 +35,12 @@ function useFetchReviews(productId) {
                     response = await fetch("https://time7064.github.io/e_commerce_new/db.json");
 
                     json = await response.json();
-                    json = json.products;
+                    json = json.reviews;
+
+                    // TODO: URL 주소로 data 못찾음.. 필터링으로..
+                    const json2 = json.filter(value  => value.id === productId);
+                    // console.log("[reviews json2] \n", json2);
+                    json = json2;
 
                     console.log("[reviews json.products] \n", json);
                 }   
@@ -46,9 +51,7 @@ function useFetchReviews(productId) {
                     console.log("[reviews json] \n", json);
                 }
                 
-                // TODO: URL 주소로 data 못찾음.. 필터링으로..
-                const json2 = json.filter(value  => value.productId === productId);
-                console.log("[reviews json2] \n", json2);
+                
 
                 if(!response.ok) {
                     throw new Error();
@@ -56,7 +59,7 @@ function useFetchReviews(productId) {
 
                 // TODO: URL 주소로 data 못찾음.. 필터링으로..
                 // setReviews(json);
-                setReviews(json2);
+                setReviews(json);
 
                 setIsReviewsLoading(false);
             } catch {
