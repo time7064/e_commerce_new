@@ -43,6 +43,8 @@ function useFetchProducts() {
 
                     response = await fetch(vURL);
 
+                    json = await response.json();
+
                     console.log("02 ------------------------");
                     
                     json = json.products;
