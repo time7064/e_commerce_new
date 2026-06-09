@@ -37,6 +37,10 @@ function useFetchReviews(productId) {
                     json = await response.json();
                     json = json.reviews;
 
+                    var json2 = json.filter(value  => value.productId === productId);
+
+                    json = json2;
+
                     console.log("[reviews json.products] \n", json);
                 }   
                 else {
