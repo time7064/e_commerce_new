@@ -28,14 +28,14 @@ function useFetchProduct(productId) {
                     json = await response.json();
                     json = json.products;
 
-                    console.log("[reviews json.products] \n", json);
+                    console.log("[product json.products] \n", json);
 
                     // TODO: URL 주소로 data 못찾음.. 필터링으로..
                     // var json2 = json.filter(value  => value.id === productId);
                     var json2 = json.filter(value  => value.id == String(productId));
 
 
-                    console.log("[reviews json2] \n", json2);
+                    console.log("[product json2] \n", json2);
 
                     json = json2;
                 }   
@@ -43,7 +43,7 @@ function useFetchProduct(productId) {
                     response = await fetch("http://localhost:3000/products/" + productId);
 
                     json = await response.json();
-                    console.log("[productId json] \n", json);
+                    console.log("[product json] \n", json);
                 }
 
 
