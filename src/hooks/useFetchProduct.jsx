@@ -19,9 +19,8 @@ function useFetchProduct(productId) {
                 var response = null;
                 var json = null;
 
-                
-
-
+                // TODO : 로컬 서버 - json DB 환경 세팅 사용중
+                //        개발 서버 - db.json 파일 사용
                 if(domain != "localhost") {
                     response = await fetch("https://time7064.github.io/e_commerce_new/db.json");
 

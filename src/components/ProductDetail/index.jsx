@@ -62,6 +62,8 @@ const ProductDetail = () => {
     // console.log("domain : ", domain);
 
 
+    // TODO : 로컬 서버 - json DB 환경 세팅 사용중
+    //        개발 서버 - db.json 파일 사용 => product[0].image 배열로 사용해야함.
     if(domain != "localhost") {
         return(
         <div>
