@@ -37,11 +37,6 @@ function useFetchReviews(productId) {
                     json = await response.json();
                     json = json.reviews;
 
-                    // TODO: URL 주소로 data 못찾음.. 필터링으로..
-                    const json2 = json.filter(value  => value.id === productId);
-                    // console.log("[reviews json2] \n", json2);
-                    json = json2;
-
                     console.log("[reviews json.products] \n", json);
                 }   
                 else {
