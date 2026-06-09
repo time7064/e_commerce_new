@@ -31,8 +31,8 @@ function useFetchProduct(productId) {
                     console.log("[reviews json.products] \n", json);
 
                     // TODO: URL 주소로 data 못찾음.. 필터링으로..
-                    var json2 = json.filter(value  => value.id === productId);
-                    // var json2 = json.filter(value  => value.id == String(productId));
+                    // var json2 = json.filter(value  => value.id === productId);
+                    var json2 = json.filter(value  => value.id == String(productId));
 
 
                     console.log("[reviews json2] \n", json2);
