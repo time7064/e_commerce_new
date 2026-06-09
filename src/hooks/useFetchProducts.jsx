@@ -39,10 +39,17 @@ function useFetchProducts() {
                     vURL = "https://time7064.github.io/e_commerce_new/db.json";
                     console.log("vURL : ", vURL);
 
-                    response = await fetch(vURL);
-                    console.log("localhost X - [json.products] ", json.products);
+                    console.log("01 ------------------------");
 
+                    response = await fetch(vURL);
+
+                    console.log("02 ------------------------");
+                    
                     json = json.products;
+
+                    console.log("03 ------------------------");
+
+                    console.log("localhost X - [json.products] ", json);
                 }
                 else {
                     vURL = "http://localhost:3000/products";  // json 서버 기동시 사용..
@@ -55,7 +62,6 @@ function useFetchProducts() {
                     console.log("localhost [json] ", json);
                 }
                 
-                console.log(json);
                 
 
                 if(!response.ok) {
