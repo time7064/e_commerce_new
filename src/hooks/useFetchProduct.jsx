@@ -12,9 +12,39 @@ function useFetchProduct(productId) {
             try {
                 setIsProductLoading(true);
 
-                const response = await fetch("http://localhost:3000/products/" + productId);
-                const json = await response.json();
-                console.log("[productId json] \n", json);
+                // 현재 도메인 가져오기 (예: example.com)
+                const domain = window.location.hostname;
+                // console.log("domain : ", domain);
+
+                var response = null;
+                var json = null;
+
+                
+
+
+                if(domain != "localhost") {
+                    response = await fetch("https://time7064.github.io/e_commerce_new/db.json");
+
+                    json = await response.json();
+                    json = json.products;
+
+                    console.log("[reviews json.products] \n", json);
+
+                    // TODO: URL 주소로 data 못찾음.. 필터링으로..
+                    var json2 = json.filter(value  => value.productId === productId);
+                    console.log("[reviews json2] \n", json2);
+
+                    json = json2;
+                }   
+                else {
+                    response = await fetch("http://localhost:3000/products/" + productId);
+
+                    json = await response.json();
+                    console.log("[productId json] \n", json);
+                }
+
+
+
 
                 if(!response.ok) {
                     throw new Error();
