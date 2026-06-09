@@ -31,6 +31,8 @@ function useFetchProducts() {
 
                 var vURL = null;
 
+                 var json = null;
+
                 if(domain != "localhost") {
                     console.log("domain != localhost ===== 01 ");
 
@@ -38,7 +40,7 @@ function useFetchProducts() {
                     console.log("vURL : ", vURL);
 
                     response = await fetch(vURL);
-                    console.log("[json.products] ", json.products);
+                    console.log("localhost X - [json.products] ", json.products);
 
                     json = json.products;
                 }
@@ -48,10 +50,11 @@ function useFetchProducts() {
 
                     response = await fetch(vURL);
 
+                    json = await response.json();
+
+                    console.log("localhost [json] ", json);
                 }
                 
-                // const json = await response.json();
-                var json = await response.json();
                 console.log(json);
                 
 
