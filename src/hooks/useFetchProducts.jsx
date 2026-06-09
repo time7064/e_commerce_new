@@ -27,28 +27,32 @@ function useFetchProducts() {
                 
                 
 
-            
+                var response = null;
 
-                var vURL = "http://localhost:3000/products";  // json 서버 기동시 사용..
+                var vURL = null;
 
                 if(domain != "localhost") {
+                    console.log("domain != localhost ===== 01 ");
+
                     vURL = "https://time7064.github.io/e_commerce_new/db.json";
-                }
+                    console.log("vURL : ", vURL);
 
-                console.log("vURL : ", vURL);
-                
-                const response = await fetch(vURL);
-                
-
-                // const json = await response.json();
-                var json = await response.json();
-                console.log(json);
-
-                if(domain != "localhost") {
+                    response = await fetch(vURL);
                     console.log("[json.products] ", json.products);
 
                     json = json.products;
                 }
+                else {
+                    vURL = "http://localhost:3000/products";  // json 서버 기동시 사용..
+                    console.log("vURL : ", vURL);
+
+                    response = await fetch(vURL);
+
+                }
+                
+                // const json = await response.json();
+                var json = await response.json();
+                console.log(json);
                 
 
                 if(!response.ok) {
