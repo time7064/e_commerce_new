@@ -39,7 +39,7 @@ const ProductDetail = () => {
     console.log("index category - ", product.category);
     console.log("index price - ", product.price);
 
-    console.log("** category - ", product[0].category);
+    // console.log("** category - ", product[0].category);
 
 
     
@@ -55,7 +55,74 @@ const ProductDetail = () => {
         return <div>상품 정보를 불러오는 중에 오류가 발생했습니다..</div>;
     }
 
-    return(
+
+
+    // 현재 도메인 가져오기 (예: example.com)
+    const domain = window.location.hostname;
+    // console.log("domain : ", domain);
+
+
+    if(domain != "localhost") {
+        return(
+        <div>
+            <div className={styles.productContainer}>
+                <img src={product[0].image} />
+                <div className={styles.productInfo}>
+                    <div className={styles.productCategory}>{product.category}</div>
+                    <h2>{product[0].name}</h2>
+                    <div className={styles.productPrice}>{product[0].price.toLocaleString()}원</div>
+                    <button>구매하기</button>
+                </div>
+            </div>
+
+            {/* 라인 생성 */}
+            <hr />
+
+            <p className={styles.productDesc}>
+                {product[0].description}
+            </p>
+
+            <h3>리뷰({reviews.length})</h3>
+            <hr />
+
+
+            {reviews.length > 0 ? (
+
+                reviews.map((review) => {
+                    return(
+
+                        <div key={review.id} className={styles.reviewItem}>
+                            <div className={styles.reviewHearder}>
+                                <div>{review.username}</div>
+                                <div>({review.rating}/5)</div>
+                        </div>
+                        <div className={styles.text}>
+                            {review.text}
+                        </div>
+                    </div> 
+
+                    );
+                })
+
+            ) : <div className={styles.empyReview}>리뷰가 없습니다.</div> }
+           
+            {/* 
+            <div className={styles.reviewItem}>
+                <div className={styles.reviewHearder}>
+                    <div>Alice</div>
+                    <div>(4/5)</div>
+                </div>
+                <div>
+                    너무 잘 사용하고 있습니다. 굿.. 너무 잘 사용하고 있습니다. 굿..
+                </div>
+            </div> 
+            */}
+
+        </div>
+    );
+    }
+    else {
+        return(
         <div>
             <div className={styles.productContainer}>
                 <img src={product.image} />
@@ -112,6 +179,16 @@ const ProductDetail = () => {
 
         </div>
     );
+    }
+
+
+
+    
+
+
+
+
+
 };
 
 export default ProductDetail;
