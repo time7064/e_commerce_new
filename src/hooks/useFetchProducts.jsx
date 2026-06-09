@@ -12,41 +12,33 @@ function useFetchProducts() {
             try {
                 setIsProductsLoading(true);
 
-                // TODO : 서버 배포 휴대폰 접속 문제 해결 ...............................................
                 
                 // 현재 도메인 가져오기 (예: example.com)
                 const domain = window.location.hostname;
+                console.log("domain : ", domain);
+
                 // 포트 번호를 포함한 호스트 가져오기 (예: localhost:3000)
                 const host = window.location.host;
+                // console.log("host : ", host);
+
                 // 프로토콜(http/https)을 포함한 전체 URL 가져오기
                 const href = window.location.href;
-                console.log("domain : ", domain);
-                console.log("host : ", host);
-                console.log("href : ", href);
-
-                const URL = href + "products";
-                console.log("URL : ", URL);
-
-                var vURL = "http://localhost:3000/products";  // json 서버 기동시 사용..
-                // var vURL = "http://localhost:5173/e_commerce_new/db.json";
+                // console.log("href : ", href);
+                
                 
 
+            
+
+                var vURL = "http://localhost:3000/products";  // json 서버 기동시 사용..
+
                 if(domain != "localhost") {
-                    // vURL = "https://time7064.github.io/e_commerce_new/db.json?products";
                     vURL = "https://time7064.github.io/e_commerce_new/db.json";
-
-
-                    
                 }
 
-                console.log("* vURL : ", vURL);
+                console.log("vURL : ", vURL);
                 
                 const response = await fetch(vURL);
                 
-
-                // const response = await fetch("http://localhost:3000/products");
-                
-                // ......................................................................................
 
                 // const json = await response.json();
                 var json = await response.json();
