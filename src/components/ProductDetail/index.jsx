@@ -39,6 +39,8 @@ const ProductDetail = () => {
     console.log("index category - ", product.category);
     console.log("index price - ", product.price);
 
+    console.log("** category - ", product[0].category);
+
 
     
 
