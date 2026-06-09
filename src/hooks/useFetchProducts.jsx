@@ -25,13 +25,10 @@ function useFetchProducts() {
                 const href = window.location.href;
                 // console.log("href : ", href);
                 
-                
-
-                var response = null;
-
                 var vURL = null;
 
-                 var json = null;
+                var response = null;
+                var json = null;
 
                 if(domain != "localhost") {
                     console.log("domain != localhost ===== 01 ");
