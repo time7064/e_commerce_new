@@ -9,7 +9,7 @@ const Layout = () => {
             {/* <Link to="/"  */}
             <Link to="/e_commerce_new/" 
                 className={ styles.link}>
-                <h1>갓성비 mall</h1>
+                <h1>갓성비 Mall</h1>
             </Link>
 
             {/*             
